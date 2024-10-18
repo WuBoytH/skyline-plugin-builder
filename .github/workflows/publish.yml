@@ -26,14 +26,14 @@ jobs:
         with:
           context: .
           file: ./Containerfile
-          tags: "wuboyth/hewdraw-builder:latest"
+          tags: "wuboyth/skyline-plugin-builder:latest"
       
       - name: Test Docker Image
         uses: docker/build-push-action@v4
         with:
           context: .
           file: ./Containerfile
-          tags: "wuboyth/hewdraw-builder-test:latest"
+          tags: "wuboyth/skyline-plugin-builder-test:latest"
           target: "test"
       
       - name: Build and push Docker image
@@ -42,5 +42,5 @@ jobs:
           context: .
           file: ./Containerfile
           push: ${{ github.event_name != 'pull_request' && github.event_name != 'pull_request_target' }}
-          tags: "wuboyth/hewdraw-builder:latest"
+          tags: "wuboyth/skyline-plugin-builder:latest"
           labels: "hewdraw remix"
