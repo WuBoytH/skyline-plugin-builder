@@ -7,7 +7,7 @@ echo "Defaulting to stable"
 rustup default stable
 
 echo "Installing cargo-skyline."
-cargo install cargo-skyline
+cargo install --git https://github.com/raytwo/cargo-skyline --branch std-change
 
 echo "Updating skyline std (this may take a minute, with no output)"
 cargo skyline update-std
